@@ -17,7 +17,7 @@ const Input = styled.input`
   transition: 0.3s;
   border: 2px solid;
   border-color: transparent;
-  color: ${({ theme }) => theme.input};
+  color: ${({ theme }) => theme.text};
   &:focus {
     border-color: ${({ theme }) => theme.blue};
   }

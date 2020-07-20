@@ -45,7 +45,7 @@ const Options = styled.ul`
   font-size: ${({ theme }) => theme.fontSize.s};
   border-radius: 8px;
   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.25);
-  transition: 0.15s;
+  transition: 0.3s;
   opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
   visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
 `;
