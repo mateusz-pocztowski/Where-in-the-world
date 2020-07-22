@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import arrowIcon from 'icons/arrow-up.svg';
-import useTheme from 'hooks/useTheme';
+import { ThemeContext } from 'contexts/ThemeContext';
 import useWindowOffset from 'hooks/useWindowOffset';
 import { animateScroll as scroll } from 'react-scroll';
 
@@ -41,8 +41,8 @@ const Icon = styled.i`
 
 const ReturnToTop = () => {
   const windowOffsetY = useWindowOffset();
+  const { isDarkTheme } = useContext(ThemeContext);
 
-  const { isDarkTheme } = useTheme();
   return (
     <Wrapper
       isVisible={windowOffsetY > 200}

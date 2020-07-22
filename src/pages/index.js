@@ -74,7 +74,7 @@ const IndexPage = ({
 
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="Home | Where in the world?" />
       <FiltersWrapper>
         <Filters
           selectedRegion={selectedRegion}
