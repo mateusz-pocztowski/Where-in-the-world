@@ -1,5 +1,4 @@
 import React, { useEffect, useReducer, createContext } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { rootReducer, initialState } from 'contexts/FiltersContext/reducer';
 import PropTypes from 'prop-types';
 import slugify from 'slugify';
@@ -8,26 +7,8 @@ const COUNTRIES_PER_SCROLL = 16;
 
 export const FiltersContext = createContext();
 
-const FiltersProvider = ({ children }) => {
+const FiltersProvider = ({ children, nodes }) => {
   const [countries, dispatch] = useReducer(rootReducer, initialState);
-
-  const data = useStaticQuery(graphql`
-    query allCountries {
-      allCountries(filter: { name: { ne: null } }) {
-        nodes {
-          name
-          capital
-          flag
-          region
-          population
-        }
-      }
-    }
-  `);
-
-  const {
-    allCountries: { nodes },
-  } = data;
 
   useEffect(() => {
     const allRegions = nodes
@@ -118,6 +99,7 @@ const FiltersProvider = ({ children }) => {
 };
 
 FiltersProvider.propTypes = {
+  nodes: PropTypes.arrayOf(PropTypes.object).isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

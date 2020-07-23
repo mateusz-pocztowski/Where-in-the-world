@@ -3,6 +3,8 @@ const slugify = require('slugify');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+  const DetailedTemplate = path.resolve(`./src/layouts/DetailedLayout.js`);
+
   const result = await graphql(`
     query allCountries {
       allCountries(filter: { name: { ne: null } }) {
@@ -22,7 +24,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: `/${slugifiedName}`,
-      component: path.resolve(`./src/layouts/DetailedLayout.js`),
+      component: DetailedTemplate,
       context: {
         id: country.id,
         borders: country.borders,

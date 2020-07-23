@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import moonIcon from 'icons/moon.svg';
 import { ThemeContext } from 'contexts/ThemeContext';
-import { FiltersContext } from 'contexts/FiltersContext/FiltersContext';
 
 const Wrapper = styled.nav`
   position: fixed;
@@ -91,12 +90,11 @@ const Name = styled.h3`
 
 const Navbar = () => {
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
-  const { clearFilters } = useContext(FiltersContext);
 
   return (
     <Wrapper>
       <InnerWrapper>
-        <TitleWrapper onClick={clearFilters} to="/">
+        <TitleWrapper to="/">
           <Title>Where in the world?</Title>
         </TitleWrapper>
         <DarkModeButton onClick={toggleTheme}>

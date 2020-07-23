@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 
 const useWindowOffset = () => {
-  const [offsetY, setOffsetY] = useState(window.pageYOffset);
+  const [offsetY, setOffsetY] = useState(0);
 
   useEffect(() => {
+    setOffsetY(window.pageYOffset);
+
     const onScroll = () => {
       setOffsetY(window.pageYOffset);
     };
