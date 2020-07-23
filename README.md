@@ -1,6 +1,6 @@
-# Rock, Paper, Scissors
+# Where in the world?
 
-Rock, Paper, Scissors game made with Gatsby for a challenge by Frontend Mentor.
+Where in the world app made with Gatsby for a challenge by Frontend Mentor.
 
 ![desktop-view](https://user-images.githubusercontent.com/55945204/88342211-486da380-cd3f-11ea-9ad4-e1cd10894acd.png)
 
