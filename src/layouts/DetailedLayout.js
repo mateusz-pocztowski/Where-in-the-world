@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import SEO from 'components/SEO/SEO';
-import backIcon from 'icons/back.svg';
+import backIcon from 'assets/icons/back.svg';
 import { ThemeContext } from 'contexts/ThemeContext';
 import slugify from 'slugify';
 
